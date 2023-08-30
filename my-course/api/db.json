@@ -1,0 +1,72 @@
+{
+    "courses":[
+        {
+            "id": 1,
+
+            "content":"React is a JavaScript library for building user interfaces. It allows developers to create interactive and dynamic web applications by dividing the UI into reusable components, making it efficient and easy to manage. ",
+
+            "title": "React",
+
+            "price": "$50"
+
+        },
+
+        {
+            "id": 2,
+
+            "content":"HTML is the standard markup language used to create the structure and content of web pages. It consists of tags that define elements such as headings, paragraphs, links, and images. ",
+
+            "title": "HTML (HyperText Markup Language)",
+
+            "price": "free"
+
+        },
+
+        {
+            "id": 3,
+
+            "content":"CSS is a stylesheet language used to control the presentation and layout of web pages. It allows designers to apply styles like colors, fonts, and spacing to HTML elements. ",
+
+            "title": "CSS (Cascading Style Sheets)",
+
+            "price": "$20"
+
+        },
+
+        {
+            "id": 4,
+
+            "content":"JavaScript is a versatile programming language that enables interactive web features. It runs in web browsers and can be used to manipulate HTML and CSS, handle user interactions, and perform various tasks on the client-side. ",
+
+            "title": "JavaScript",
+
+            "price": "$40"
+
+        },
+
+        {
+            "id": 5,
+
+            "content":"Java is a versatile, object-oriented programming language known for its platform independence. It's widely used for developing various applications, including web, mobile, and enterprise software. Java applications run on the Java Virtual Machine (JVM), allowing them to work on different platforms without modification. Java offers a robust standard library, strong support for multi-threading, and automatic memory management through garbage collection. It's commonly used for Android app development, server-side applications, and large-scale systems.",
+
+            "title": "Java",
+
+            "price": "$30"
+
+        },
+
+        {
+            "id": 6,
+
+            "content":" C# is a modern, statically-typed programming language developed by Microsoft. It's part of the .NET ecosystem and is commonly used for building Windows applications, web services, and games using the Unity game engine. C# combines elements of C++ and Java, providing a powerful and versatile toolset for developers. It features a rich standard library, strong support for object-oriented programming, and memory management through automatic garbage collection. C# is known for its ease of use and is integral to Microsoft's software development technologies ",
+
+            "title": "C# (C Sharp)",
+
+            "price": "$30"
+
+        }
+
+
+    ]
+
+}
