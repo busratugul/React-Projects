@@ -19,12 +19,13 @@ const checkIndex = (index) => {
 }
 
 const getRandomCourse = () => {
-  Math.random() *
-  setIndex((index) => {
-    let idx = index - 1 
-    return checkIndex(idx)
-  })
-}
+  let randomNumber = Math.floor(Math.random() * courses.length)
+  if(randomNumber === index){
+    randomNumber = index + 1
+  }
+  setIndex(checkIndex(randomNumber)) 
+  }
+
 
 const prevCourse = () => {
   setIndex((index) => {
