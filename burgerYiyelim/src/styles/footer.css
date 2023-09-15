@@ -1,0 +1,31 @@
+.footer {
+    background-color: brown;
+    position: relative;
+    clear: both;
+    margin-bottom: 0;
+    width: 100%;
+    height: 90px;
+    padding: 6px;
+}
+
+.footer .icons {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.footer p {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer .icons svg {
+    margin: 5px;
+    cursor: pointer;
+}
+
+.footer .icons svg:hover {
+    color: #fdc62d;
+    transition: color 0.5s ease;
+}
