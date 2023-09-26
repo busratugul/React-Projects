@@ -25,10 +25,12 @@
 .card {
     position: relative;
     border: 1px solid #333;
+    max-width: 50rem;
     height: 40rem;
     padding: 1rem;
     background-color: #fff;
     margin-top: 3rem;
+    white-space: normal;
 }
 
 .title {
@@ -59,15 +61,19 @@
 }
 
 .text {
-    width: 22rem;
     height: 20rem;
     background-color: #fff;
     letter-spacing: 0.05rem;
     word-spacing: 0.1rem;
-    padding: 3rem 0;
-    border: 0.1rem solid #333;
-    
+    padding: 1rem;
+    white-space: normal; 
 }
+
+.input-text {
+    width: 45rem;
+    white-space: normal;
+}
+
 
 .submitBtn {
     border: 1px solid #333;

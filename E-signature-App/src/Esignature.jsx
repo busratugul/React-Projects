@@ -7,6 +7,7 @@ function Esignature() {
 const [name, setName] = useState("")
 const [date, setDate] = useState("")
 const [text, setText] = useState("")
+const [submitted, setSubmitted] = useState(false)
 
 const handleName = (e) => {
     setName(e.target.value)
@@ -19,6 +20,26 @@ const handleDate = (e) => {
 const handleText = (e) => {
     setText(e.target.value)
 }
+
+const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(!name || !date || !text) {
+        alert("Please complete all fields")
+        return
+    }
+
+    setSubmitted(true)
+
+    setTimeout(() => {
+        setName("")
+        setDate("")
+        setText("")
+
+    setSubmitted(false)
+    }, 3000);
+}
+
 
 const inputStyle = {
     width : "5rem",
@@ -46,16 +67,16 @@ const inputStyle = {
     <div className='input'>
     
     <input type="text" value={name} style= {inputStyle} placeholder= {"Name"} onChange={handleName}  />
-
     <input type="date" value={date} style= {inputStyle} onChange= {handleDate}/>
 
-    <input type="text" value={text} style= {inputStyle} onChange= {handleText} placeholder="Text" />
+    <input type="text" value={text} style= {inputStyle} onChange= {handleText} placeholder="Text" className='input-text' />
 
 
     </div>
 
-    <button type='submit' className='submitBtn'> Submit </button>
+    <button type='submit' className='submitBtn' onClick={handleSubmit}> Submit </button>
     </div>
+
     </>
   )
 }
