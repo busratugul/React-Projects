@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 5rem;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: silver;
+}
+
+
+.container {
+    width: 50%;
+    padding: 1rem;
+    margin: auto;
+}
+
+.header {
+    margin-top: 3rem;
+    margin-bottom: -5rem ;
+    text-shadow:-0.1rem -0.1rem 0.1rem #333;
+}
+
+.card {
+    position: relative;
+    border: 1px solid #333;
+    height: 40rem;
+    padding: 1rem;
+    background-color: #fff;
+    margin-top: 3rem;
+}
+
+.title {
+    color: slateblue;
+    font-size: 3.5rem;
+    font-weight: 500;
+    margin: 3rem 0;
+    text-shadow:-0.1rem -0.2rem 0.1rem #333;
+    background-color: #fff;
+}
+
+.subtitle {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top:-1rem;
+    text-shadow:-0.1rem -0.2rem 0.1rem #333;
+    background-color: #fff;
+}
+
+.input {
+    margin-bottom: 0;
+    position: "absolute";
+    top: "45rem";
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.text {
+    width: 22rem;
+    height: 20rem;
+    background-color: #fff;
+    letter-spacing: 0.05rem;
+    word-spacing: 0.1rem;
+    padding: 3rem 0;
+    border: 0.1rem solid #333;
+    
+}
+
+.submitBtn {
+    border: 1px solid #333;
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    margin: 2rem 0;
+    background-color: #333;
+    color: #fff;
+    box-shadow: -0.1rem -0.1rem 0.1rem #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    transform: scale(0.98);
+    background-color: slateblue;
+    color: #333;
+}
