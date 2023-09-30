@@ -1,7 +1,6 @@
 import './App.css'
-import Buttons from './Buttons'
+import React,{ useState } from 'react'
 import Text from './Text'
-import { useState } from 'react'
 
 function App() {
   
@@ -12,31 +11,75 @@ function App() {
     "That's all they really want Some fun when the working day is done Oh devs, they wanna have fun Oh devs wanna have fun Oh devs just wanna have fun (devs, they wanna,wanna have fun, devs wanna have)"
   ]
 
-  const [selectedText, setSelectedText] = useState("")
+  const buttons = [
+    {
+        text: "h1",
+        element:"h1"
+    },
+    {
+        text: "h2",
+        element:"h2"
+    },
+    {
+        text: "h3",
+        element:"h3"
+    },
+    {
+        text: "h6",
+        element:"h6"
+    },
+    {
+        text: "paragraph",
+        element:"p"
+    },
+    {
+        text: "bold",
+        element:"b"
+    },
+    {
+        text: "italic",
+        element:"i"
+    },
+    {
+        text: "space",
+        element:"br"
+    },
+]
 
-  const handleMouseUp= () => {
-    setSelectedText(window.getSelection().toString())
-    console.log(selectedText)
-   
+  const [selectedText, setSelectedText] = useState("")
+  const [selectedElement, setSelectedElement] = useState(null)
+
+  const handleMouse = () => {
+    const text = window.getSelection().toString()
+    setSelectedText(text)
+    
+  }
+ 
+
+  const handleClick = (e) => {
+    const element = e.target.innerText
+    const newElement = React.createElement(element,null, selectedText)
+     
+
+
+    setSelectedElement(newElement)
 }
 
-const [currentElement, setCurrentElement] = useState("p")
-
-texts.forEach((currText) => {
-  currText.includes(selectedText)
-})
 
 return (
 
-  <div onMouseUp={handleMouseUp} className='App'>
-    <h1 className='main-title'>Hi I'am TipTap</h1>
-      <Buttons setCurrentElement= {setCurrentElement}/>
-      <div className='editör-container' >
-     {
-      texts.map((text) => (
-        <Text currentElement= {currentElement}  text= {text}/>
+  <div className='App'>
+    <h1 className='main-title'>Hi I'am TipTap</h1>    {
+      buttons.map((button,key) => (
+      <button onClick={handleClick} key={key}>{button.text}</button>
       ))
-     }
+    }
+      <div className='editör-container' onMouseUp={handleMouse} >
+      {
+      texts.map((text, key) => (
+        <Text text= {text} key={key}/>
+      ))
+      }
 </div>
   </div>
   )

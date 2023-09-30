@@ -1,12 +1,11 @@
 import React from 'react'
 
 
-function Text({text, currentElement}) {
-const textArray = text.split(" ")
-console.log("SPLIT" ,textArray);
-  
-  
-return  React.createElement(`${currentElement}`, null, `${text}`)
+function Text({text}) {
+  return (
+    <div className='text-container'> {text} </div>
+  )
 }
+
 
 export default Text
