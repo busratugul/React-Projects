@@ -1,4 +1,6 @@
 import './App.css'
+import SlideToUnlock from './components/SlideToUnlock'
+import LockSlider from './components/LockSlider'
 
 function App() {
 
