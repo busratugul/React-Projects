@@ -1,8 +1,11 @@
 import React from 'react'
+import './App.css'
 
 function SlideToUnlock() {
   return (
-    <div>SlideToUnlock</div>
+    <div>
+      <LockSlider/>
+    </div>
   )
 }
 
