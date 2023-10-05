@@ -1,8 +1,19 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 
-function LockSlider() {
-  return <input type="range" className="slider" />
+function LockSlider({handleInput, sliderValue, width}) {
+  let sliderStyle = {
+    appearance: "none",
+    width: !width ?"300px" :width,
+    height:"50px",
+    backgroundColor: "rgba(188, 190, 188, 0.5)",
+    outline: "none",
+
+
+  }
+  return <input type="range" className="slider"style={sliderStyle} 
+  value={sliderValue}
+  onInput={handleInput}/>
 }
 
 export default LockSlider
