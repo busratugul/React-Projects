@@ -8,15 +8,12 @@
   font-size: 1.2rem;;
 }
 
-.alert-close {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .btn {
   padding: 0.5rem;
   font-size: 1.2rem;
+  margin-left: -3rem;
+  margin-top: 1.2rem;
 }
 
 .fadeAlert {

@@ -2,6 +2,7 @@ import React, { useEffect,  useState }from 'react'
 import Buttons from "./Buttons"
 
 export default function Alert({type, message, delay= false, delayTime= 3000 }) {
+  
   const [showAlert, setShowAlert] = useState(true)
 
   const closeAlert = (e) => {
