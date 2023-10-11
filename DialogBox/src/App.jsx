@@ -1,4 +1,4 @@
-import './App.css'
+import './Bounce.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Dialog from './Dialog'
 
