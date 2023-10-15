@@ -1,0 +1,44 @@
+.App {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label{
+    padding: 0 0.3rem;
+}
+
+.form-group input {
+    border: none;
+    padding: 0.3rem;
+}
+
+.btn {
+    width: 100%;
+    margin:0.5rem 0;
+}
+
+.alert {
+    width: 40%;
+    margin: auto;
+    position: relative;
+}
+
+svg {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}

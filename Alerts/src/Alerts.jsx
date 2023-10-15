@@ -9,7 +9,7 @@ function App() {
     <div className='alerts'>
     <Alert type={"success"} message={"Successful login"}/>
     <Alert type={"info"} message={"Time Triggered"} delay={true}/>
-    <Alert type={"danger"} message={"Warning!"} delay={true}delayTime={1000}/>
+    <Alert type={"danger"} message={"Warning!"} delay={true} delayTime={1000}/>
     </div>
      </div>
   )
