@@ -1,0 +1,11 @@
+* {
+  text-align: center;
+}
+
+.container {
+  padding: 3rem;
+}
+
+.container .card {
+  border: none;
+}
