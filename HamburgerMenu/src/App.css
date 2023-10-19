@@ -2,6 +2,19 @@
     list-style-type: none;
 }
 
-.navbar-items a:hover {
-    color: red;
+
+.navbar a:hover {
+    color: black;
+}
+
+.iconMenu {
+    position: absolute;
+    right: 1rem;
+    top: 1.6rem;
+}
+
+.iconClose {
+    position: absolute;
+    right: 1rem;
+    top: 1.6rem;
 }
