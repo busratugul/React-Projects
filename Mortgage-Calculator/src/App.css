@@ -1,0 +1,9 @@
+.border-light:hover {
+cursor: not-allowed;
+}
+.border-light:active {
+    outline: none;
+}
+.border-light:focus {
+    outline: none;
+}
