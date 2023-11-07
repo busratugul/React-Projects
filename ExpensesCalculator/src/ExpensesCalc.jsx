@@ -4,12 +4,11 @@ import { ExpensesForm } from './ExpensesForm'
 import { ExpensesList } from './ExpensesList'
 import { BudgetStyle } from '../styles/BudgetStyle'
 
-const expensesJSON = localStorage.getItem('expenses');
-const initialExpenses = expensesJSON ? JSON.parse(expensesJSON) :[ ];
+const initialExpense = localStorage.getItem("expenses")?JSON.parse(localStorage.getItem("expenses")): [];
 
 export const ExpensesCalc = () => {
   // States Values
-  const [expenses, setExpenses] = useState(initialExpenses)
+  const [expenses, setExpenses] = useState(initialExpense)
   const [date, setDate] = useState('')
   const [amount, setAmount] = useState('')
   const [charge, setCharge] = useState('')
