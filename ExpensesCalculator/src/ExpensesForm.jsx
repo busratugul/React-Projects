@@ -23,14 +23,14 @@ export const ExpensesForm = ({
           labelText="Date"
           inputType="date"
           values={date}
-          onChange={handleDate}
+          onInput={handleDate}
           style={{cursor:"pointer"}}
         />
         <FormGroup
           labelText="Expense"
           inputType="text"
           values={charge}
-          onChange={handleCharge}
+          onInput={handleCharge}
           placeholder={'e.g rent'}
           style={{cursor:"pointer"}}
         />
@@ -38,7 +38,7 @@ export const ExpensesForm = ({
           labelText="Amount"
           inputType="number"
           values={amount}
-          onChange={handleAmount}
+          onInput={handleAmount}
           placeholder={'e.g. 1500'}
           style={{cursor:"pointer"}}
         />

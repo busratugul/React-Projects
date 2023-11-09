@@ -1,5 +1,6 @@
 import React from 'react'
 import { MdEdit, MdDelete } from 'react-icons/md'
+import { Icon } from '../styles/BudgetStyle'
 
 export const ExpenseItem = ({ charge, date, amount, id, handleEdit, handleDelete}) => {
   return (
@@ -8,16 +9,16 @@ export const ExpenseItem = ({ charge, date, amount, id, handleEdit, handleDelete
         <h4>{charge}</h4>
         <small className="text-danger">{date}</small>
       </div>
-      <div className="text-success">${amount}</div>
-      <div>
-        <button 
+      <div className="text-light"> ${amount}</div>
+      <div className='d-flex'>
+        <Icon 
       className='btn btn-sm' 
       onClick={()=>handleEdit(id)}><MdEdit/>
-        </button>
-        <button 
+        </Icon>
+        <Icon 
       className='btn btn-sm' 
       onClick={()=>handleDelete(id)}><MdDelete/>
-        </button>
+        </Icon>
         </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BudgetStyle = styled.h3`
+export const BudgetStyle = styled.div`
 display: flex;
 input{
     outline: none;
@@ -24,4 +24,16 @@ input{
         color: #333;
     }
 }
+`
+
+export const Icon = styled.button `
+    background-color: #333;
+    color: #fff;
+    margin:2px 5px;
+    &:first-child:hover {
+        background-color: #ffc007  
+    }
+    &:last-child:hover {
+        background-color: red  
+    }
 `
