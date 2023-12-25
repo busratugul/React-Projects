@@ -1,0 +1,13 @@
+.addBtn {
+  padding: 10px;
+  width: 150px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.addBtn:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+}
