@@ -1,0 +1,106 @@
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #8acdd7;
+  color: #f9f9e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  background-color: #ff90bc;
+  width: 40rem;
+  min-height: 20rem;
+  margin: auto auto;
+}
+
+.header {
+  letter-spacing: 0.1rem;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: 2px solid #8acdd7;
+}
+
+input::placeholder {
+  letter-spacing: 0.1rem;
+  padding-left: 10px;
+  text-align: left;
+}
+
+button {
+  display: block;
+  margin: 20px auto 5px auto;
+}
+
+button {
+  background-color: #f9f9e0;
+  color: #176b87;
+  padding: 5px 20px;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #176b87;
+  color: #f9f9e0;
+  transform: scale(0.98);
+  transition: 0.3s all;
+}
+
+ul,
+li {
+  list-style: circle;
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.item {
+  text-align: left;
+  color: #176b87;
+  width: 60%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #ffc0d9;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.completed {
+  background-color: #BB9CC0;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
