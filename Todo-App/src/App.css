@@ -1,4 +1,3 @@
-
 * {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -17,17 +16,13 @@
 
 .App {
   background-color: #ff90bc;
-  width: 40rem;
+  width: 90%;
   min-height: 20rem;
   margin: auto auto;
 }
 
 .header {
   letter-spacing: 0.1rem;
-}
-
-h4 {
-  font-size: 20px;
 }
 
 input {
@@ -49,12 +44,13 @@ input::placeholder {
   text-align: left;
 }
 
-button {
+.add {
+  width: 30%;
   display: block;
   margin: 20px auto 5px auto;
 }
 
-button {
+.btn {
   background-color: #f9f9e0;
   color: #176b87;
   padding: 5px 20px;
@@ -65,42 +61,68 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   background-color: #176b87;
   color: #f9f9e0;
   transform: scale(0.98);
   transition: 0.3s all;
 }
 
-ul,
-li {
-  list-style: circle;
-  font-size: 18px;
-}
-
 .list {
   display: flex;
-  flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+  width: 100%;
+  font-size: 19px;
 }
 
-.item {
+.todo {
+  background-color: #ffc0d9;
   text-align: left;
   color: #176b87;
-  width: 60%;
-  margin-bottom: 10px;
   border-radius: 5px;
-  background-color: #ffc0d9;
-  padding: 10px;
+  padding: 15px 10px 0 10px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
+  width: 70%;
+  height: 3rem;
+  margin: auto;
 }
 
+.edit-input {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.edit-input:focus {
+  outline: none;
+  border: none;
+}
+
+.icons {
+  display: flex;
+  position: absolute;
+  left: 65%;
+  padding-bottom: 10px;
+}
+
+.delete, .edit, .delete:hover, .edit:hover, .save, .save:hover {
+  background-color: transparent;
+}
+
+.save {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+
 .completed {
-  background-color: #BB9CC0;
+  background-color: #bb9cc0;
   text-decoration: line-through;
   font-style: italic;
 }
-

@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
-import InputTodo from './components/InputTodo'
+import { TodoProvider } from './context/TodoContext'
+import FormTodo from './components/FormTodo'
 import TodoList from './components/TodoList'
 
 function App() {
@@ -8,8 +9,10 @@ function App() {
   return (
     <div className='App'>
       <h1 className='header'>ToDo App</h1>
-      <InputTodo/>
+    <TodoProvider>
+      <FormTodo/>
       <TodoList/>
+    </TodoProvider>
     </div>
   )
 }

@@ -1,36 +1,66 @@
-import React, { useContext, useEffect } from 'react'
-import { InputContext } from '../context/InputContext'
-import { FaRegTrashAlt } from 'react-icons/fa'
+import React, { useContext } from 'react'
+import { TodoContext } from '../context/TodoContext'
+import { FaRegTrashAlt, FaPencilAlt, FaSave } from 'react-icons/fa'
+import '../App.css'
+import { clsx } from 'clsx'
 
 function TodoList() {
-  const { list, setList, deleteItem, completed } =
-    useContext(InputContext)
-
-  useEffect(() => {
-    const storedList = localStorage.getItem('todolist')
-    if (storedList) {
-      setList(JSON.parse(storedList))
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('todolist', JSON.stringify(list))
-  }, [list])
+  const {
+    content,
+    setContent,
+    todoList,
+    deleteTodo,
+    completedTodo,
+    editTodo,
+    editedTodo,
+    newTodo,
+    setNewTodo,
+  } = useContext(TodoContext)
 
   return (
     <>
-      <h4 className="header">{list.length != 0 ? 'List' : ''}</h4>
-      <ul className="list">
-        {list.map((item,id) => (
-          <li
-            key= {id}
-            className={`item ${completed}`}
+      <h3 className="header">{todoList.length > 0 && 'List'}</h3>
+      {todoList.map((todo) => (
+        <div key={todo.id} className="list">
+          <div
+            className={todo.isCompleted ? 'todo completed' : 'todo'}
+            onClick={() => completedTodo(todo.id)}
           >
-            {item}
-            <FaRegTrashAlt onClick={() => deleteItem(item)} />
-          </li>
-        ))}
-      </ul>
+            {editTodo ? (
+              <input
+                className="edit-input"
+                placeholder={todo.text}
+                value={newTodo}
+                onChange={(e) => setNewTodo(e.target.value)}
+              />
+            ) : (
+              todo.text
+            )}
+          </div>
+          <div className="icons">
+            {editTodo ? (
+              <button className="btn save">
+                <FaSave />
+              </button>
+            ) : (
+              <>
+                <button
+                  className="btn edit"
+                  onClick={() => editedTodo(todo.id)}
+                >
+                  <FaPencilAlt />
+                </button>
+                <button
+                  className="btn delete"
+                  onClick={() => deleteTodo(todo.id)}
+                >
+                  <FaRegTrashAlt />
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      ))}
     </>
   )
 }

@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { InputProvider } from './context/InputContext.jsx'
+import { TodoProvider } from './context/TodoContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <InputProvider>
-    <App />
-  </InputProvider>
+    <TodoProvider> <App /></TodoProvider>
+   
 )
