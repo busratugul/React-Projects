@@ -1,45 +1,57 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useRef } from 'react'
 import { v4 as uuid4 } from 'uuid'
 
 export const TodoContext = createContext()
 
 export const TodoProvider = ({ children }) => {
+  const inputRef = useRef(null)
   //STATES
   const [content, setContent] = useState('')
   const [todoList, setTodoList] = useState([])
-  const [editTodo, setEditTodo] = useState(false)
-  const [newInput, setNewInput] = useState()
+  const [newContent, setNewContent] = useState('')
 
   //Form Submit olduğunda yeni todo oluşturup listeye ekleme ve inputu temizleme
-  const addTodo = (event) => {
+  const addTodo = (event, content) => {
     event.preventDefault()
     const newTodo = {
       id: uuid4(),
       text: content,
       isCompleted: false,
+      isEditable: false,
     }
     setTodoList([...todoList, newTodo])
     setContent('')
   }
 
   const deleteTodo = (id) => {
-    const filteredList = todoList.filter((todo) => todo.id !== id && todo)
-    setTodoList(filteredList)
+    setTodoList((prevList) => prevList.filter((todo) => todo.id !== id && todo))
   }
 
   const completedTodo = (id) => {
-    const completedList = todoList.map((todo) =>
-      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : { ...todo }
+    setTodoList((prevList) =>
+      prevList.map((todo) =>
+        todo.id === id && !todo.isEditable
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo }
+      )
     )
-    setTodoList(completedList)
   }
 
-  const editedTodo = (id) => {
-    [...todoList.map((todo) =>
-      todo.id === id && !todo.isCompleted 
-        ? setEditTodo(true)
-        : setEditTodo(false)
-    ), ...todoList]
+  const editTodo = (id) => {
+    setTodoList((prevList) =>
+      prevList.map((todo) =>
+        todo.id === id ? { ...todo, isEditable: !todo.isEditable } : todo
+      )
+    )
+  }
+
+  const savedTodo = (id) => {
+    setTodoList((prevList) =>
+      prevList.map((todo) =>
+        todo.id === id  ? { ...todo, isEditable: false, text: newContent } : todo
+      )
+    )
+    setNewContent("")
   }
 
   //CONTEXT PROPSLARI
@@ -52,7 +64,10 @@ export const TodoProvider = ({ children }) => {
     deleteTodo,
     completedTodo,
     editTodo,
-    editedTodo,
+    newContent,
+    setNewContent,
+    savedTodo,
+    inputRef
   }
 
   return (

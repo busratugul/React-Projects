@@ -1,21 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { TodoContext } from '../context/TodoContext'
 import { FaRegTrashAlt, FaPencilAlt, FaSave } from 'react-icons/fa'
 import '../App.css'
-import { clsx } from 'clsx'
 
 function TodoList() {
   const {
-    content,
-    setContent,
     todoList,
+    setTodoList,
     deleteTodo,
     completedTodo,
     editTodo,
-    editedTodo,
-    newTodo,
-    setNewTodo,
+    newContent,
+    setNewContent,
+    savedTodo,
   } = useContext(TodoContext)
+
+  useEffect(() => {
+    const storedList = localStorage.getItem('todo')
+    if (storedList) {
+      setTodoList(JSON.parse(storedList))
+    }
+    console.log(storedList)
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('todo', JSON.stringify(todoList))
+  }, [todoList])
 
   return (
     <>
@@ -26,28 +36,25 @@ function TodoList() {
             className={todo.isCompleted ? 'todo completed' : 'todo'}
             onClick={() => completedTodo(todo.id)}
           >
-            {editTodo ? (
+            {todo.isEditable && !todo.isCompleted ? (
               <input
                 className="edit-input"
                 placeholder={todo.text}
-                value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
+                value={newContent}
+                onChange={(e) => setNewContent(e.target.value)}
               />
             ) : (
               todo.text
             )}
           </div>
           <div className="icons">
-            {editTodo ? (
-              <button className="btn save">
+            {todo.isEditable && !todo.isCompleted ? (
+              <button className="btn save" onClick={() => savedTodo(todo.id)}>
                 <FaSave />
               </button>
             ) : (
               <>
-                <button
-                  className="btn edit"
-                  onClick={() => editedTodo(todo.id)}
-                >
+                <button className="btn edit" onClick={() => editTodo(todo.id)}>
                   <FaPencilAlt />
                 </button>
                 <button
