@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { TodoContext } from '../context/TodoContext'
 import { FaRegTrashAlt, FaPencilAlt, FaSave } from 'react-icons/fa'
 import '../App.css'
+import { FooterContext } from '../context/FooterContext'
 
 function TodoList() {
   const {
@@ -15,12 +16,14 @@ function TodoList() {
     savedTodo,
   } = useContext(TodoContext)
 
+  const { filtered } = useContext(FooterContext)
+
   useEffect(() => {
     const storedList = localStorage.getItem('todo')
     if (storedList) {
       setTodoList(JSON.parse(storedList))
     }
-    console.log(storedList)
+    //console.log(storedList)
   }, [])
 
   useEffect(() => {
@@ -30,7 +33,7 @@ function TodoList() {
   return (
     <>
       <h3 className="header">{todoList.length > 0 && 'List'}</h3>
-      {todoList.map((todo) => (
+      {filtered.map((todo) => (
         <div key={todo.id} className="list">
           <div
             className={todo.isCompleted ? 'todo completed' : 'todo'}

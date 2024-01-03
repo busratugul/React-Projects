@@ -1,5 +1,6 @@
-import React, { createContext, useState, useRef } from 'react'
+import React, { createContext, useState, useRef, useContext } from 'react'
 import { v4 as uuid4 } from 'uuid'
+import { FooterContext } from './FooterContext'
 
 export const TodoContext = createContext()
 
@@ -48,10 +49,10 @@ export const TodoProvider = ({ children }) => {
   const savedTodo = (id) => {
     setTodoList((prevList) =>
       prevList.map((todo) =>
-        todo.id === id  ? { ...todo, isEditable: false, text: newContent } : todo
+        todo.id === id ? { ...todo, isEditable: false, text: newContent } : todo
       )
     )
-    setNewContent("")
+    setNewContent('')
   }
 
   //CONTEXT PROPSLARI
@@ -67,7 +68,7 @@ export const TodoProvider = ({ children }) => {
     newContent,
     setNewContent,
     savedTodo,
-    inputRef
+    inputRef,
   }
 
   return (
