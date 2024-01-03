@@ -3,12 +3,16 @@ import { TodoContext } from './TodoContext'
 
 export const FooterContext = createContext()
 export const FooterProvider = ({ children }) => {
-  const { todoList, setTodoList } = useContext(TodoContext)
+  //diğer contextten liste aktarımı
+  const { todoList } = useContext(TodoContext)
 
+  //states
   const [filter, setFilter] = useState('all')
 
+  //kalan todo sayısını belirleme
   const todoLeft = todoList.filter((todo) => !todo.isCompleted)
 
+  //filtreleme işlemleri
   let filtered = todoList
   if (filter !== 'all') {
     filtered = todoList.filter((todo) =>
@@ -16,6 +20,7 @@ export const FooterProvider = ({ children }) => {
     )
   }
 
+  //context propsları
   const values = {
     todoLeft,
     setFilter,

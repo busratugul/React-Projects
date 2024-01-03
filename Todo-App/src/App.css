@@ -1,13 +1,14 @@
 * {
   font-family: 'Ubuntu', sans-serif;
+  margin: 0;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
   text-align: center;
-  background-color: #8acdd7;
-  color: #f9f9e0;
+  background-color: #F8EDFF;
+  color: #F8EDFF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,14 +16,18 @@
 }
 
 .App {
-  background-color: #ff90bc;
+  background-color: #3D3B40;
   width: 90%;
-  min-height: 20rem;
+  min-height: 10rem;
   margin: auto auto;
+  padding: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .header {
   letter-spacing: 0.1rem;
+  margin-bottom: 20px;
 }
 
 input {
@@ -32,27 +37,30 @@ input {
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  background-color: #F8EDFF;
+  color: #3D3B40;
+  letter-spacing: 0.1rem;
 }
 
 input:focus {
-  outline: 2px solid #8acdd7;
+  outline: 2px solid #525CEB;
 }
 
 input::placeholder {
   letter-spacing: 0.1rem;
-  padding-left: 10px;
   text-align: left;
+  color: #3D3B40;
 }
 
 .add {
   width: 30%;
   display: block;
-  margin: 20px auto 5px auto;
+  margin: 20px auto 15px auto;
 }
 
 .btn {
-  background-color: #f9f9e0;
-  color: #176b87;
+  background-color: #F8EDFF;
+  color: #3D3B40;
   padding: 5px 20px;
   letter-spacing: 0.1rem;
   border: none;
@@ -62,8 +70,8 @@ input::placeholder {
 }
 
 .btn:hover {
-  background-color: #176b87;
-  color: #f9f9e0;
+  background-color: #BFCFE7;
+  color: #3D3B40;
   transform: scale(0.98);
   transition: 0.3s all;
 }
@@ -77,11 +85,11 @@ input::placeholder {
 }
 
 .todo {
-  background-color: #ffc0d9;
+  background-color: #525CEB;
   text-align: left;
-  color: #176b87;
+  color: #F8EDFF;
   border-radius: 5px;
-  padding: 15px 10px 0 10px;
+  padding: 20px 10px 0 15px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -89,30 +97,39 @@ input::placeholder {
   width: 70%;
   height: 3rem;
   margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .edit-input {
   margin-bottom: 10px;
   margin-left: 10px;
   background-color: transparent;
-  border: none;
+  border-bottom: 1px solid #BFCFE7;
   outline: none;
+  color: #F8EDFF;
 }
 
 .edit-input:focus {
   outline: none;
-  border: none;
+  border-bottom: 1px solid #BFCFE7;
 }
 
 .icons {
   display: flex;
   position: absolute;
-  left: 65%;
+  left: 67%;
   padding-bottom: 10px;
 }
 
-.delete, .edit, .delete:hover, .edit:hover, .save, .save:hover {
+.delete,
+.edit,
+.delete:hover,
+.edit:hover,
+.save,
+.save:hover {
   background-color: transparent;
+  color: #BFCFE7;
+
 }
 
 .save {
@@ -120,9 +137,26 @@ input::placeholder {
   margin-left: 20px;
 }
 
-
 .completed {
-  background-color: #bb9cc0;
+  opacity: 0.5;
+  color: #fff;
   text-decoration: line-through;
   font-style: italic;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.filter {
+  background-color: transparent;
+  border: none;
+  color: #F8EDFF;
+  cursor: pointer;
+}
+
+.filter:hover {
+  color: #525CEB;
 }

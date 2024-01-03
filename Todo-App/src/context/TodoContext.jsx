@@ -24,10 +24,12 @@ export const TodoProvider = ({ children }) => {
     setContent('')
   }
 
+  //tek bir todoyu silme
   const deleteTodo = (id) => {
     setTodoList((prevList) => prevList.filter((todo) => todo.id !== id && todo))
   }
 
+  //tek bir todoyu tamamlanmış yapma
   const completedTodo = (id) => {
     setTodoList((prevList) =>
       prevList.map((todo) =>
@@ -38,6 +40,7 @@ export const TodoProvider = ({ children }) => {
     )
   }
 
+  //tek bir todo için edit inputunun açılması
   const editTodo = (id) => {
     setTodoList((prevList) =>
       prevList.map((todo) =>
@@ -46,10 +49,13 @@ export const TodoProvider = ({ children }) => {
     )
   }
 
+  //yaptığımız editi kayıt etme
   const savedTodo = (id) => {
     setTodoList((prevList) =>
       prevList.map((todo) =>
-        todo.id === id ? { ...todo, isEditable: false, text: newContent } : todo
+        newContent !== '' && todo.id === id
+          ? { ...todo, isEditable: false, text: newContent }
+          : todo
       )
     )
     setNewContent('')

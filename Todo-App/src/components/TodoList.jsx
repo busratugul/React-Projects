@@ -18,6 +18,7 @@ function TodoList() {
 
   const { filtered } = useContext(FooterContext)
 
+  //storegaya veri ekleme ve veriyi çekme işlemi
   useEffect(() => {
     const storedList = localStorage.getItem('todo')
     if (storedList) {
@@ -33,6 +34,9 @@ function TodoList() {
   return (
     <>
       <h3 className="header">{todoList.length > 0 && 'List'}</h3>
+
+      {/* filtered = todolist ataması yaptım ve filtreleme işlemine göre mapleme yapıyorum */}
+
       {filtered.map((todo) => (
         <div key={todo.id} className="list">
           <div
